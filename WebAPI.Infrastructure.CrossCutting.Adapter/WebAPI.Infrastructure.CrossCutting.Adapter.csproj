@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebAPI.Application.DTO\WebAPI.Application.DTO.csproj" />
+    <ProjectReference Include="..\WebAPI.Domain\WebAPI.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

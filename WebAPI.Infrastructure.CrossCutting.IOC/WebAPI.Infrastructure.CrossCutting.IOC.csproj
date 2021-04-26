@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebAPI.Application\WebAPI.Application.csproj"/>
+    <ProjectReference Include="..\WebAPI.Domain.Services\WebAPI.Domain.Services.csproj"/>
+    <ProjectReference Include="..\WebAPI.Infrastructure.Repository\WebAPI.Infrastructure.Repository.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.2.0"/>
+  </ItemGroup>
+</Project>
