@@ -29,6 +29,10 @@ namespace WebAPI.Infrastructure.Data.Maps
                 .Property(x => x.Observation)
                 .HasMaxLength(200)
                 .HasColumnType("varchar(200)");
+            builder
+                .HasOne(x => x.Address)
+                .WithOne(y => y.Person)
+                .HasForeignKey<AddressModel>(f => f.PersonId);                
         }
     }
 }

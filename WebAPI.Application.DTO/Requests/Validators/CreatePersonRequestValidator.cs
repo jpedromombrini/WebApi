@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace WebAPI.Application.DTO.Requests.Validators
 {
-    public abstract class CreatePersonRequestValidator<T> : AbstractValidator<T> where T : CreatePersonRequest
+    public class CreatePersonRequestValidator<T> : AbstractValidator<T> where T : CreatePersonRequest
     {
         public CreatePersonRequestValidator()
         {

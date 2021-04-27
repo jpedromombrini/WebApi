@@ -33,12 +33,7 @@ namespace WebAPI.Presentation
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddControllers();
-            services.AddMvc()
-            .AddFluentValidation(opt => 
-            {
-                opt.RegisterValidatorsFromAssemblyContaining<CreateAddressRequestValidator>();
-            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI.Presentation", Version = "v1" });
@@ -46,6 +41,18 @@ namespace WebAPI.Presentation
             var assembly = typeof(CreateLegalPersonCommand).GetTypeInfo().Assembly;
             services.AddMediatR(assembly);
             services.AddAutoMapper(assembly);
+            
+            services.AddMvc()
+           .AddFluentValidation(fv =>
+           {
+               fv.RegisterValidatorsFromAssemblyContaining<CreatePhysicalPersonRequestValidator>();
+               //opt.RegisterValidatorsFromAssembly(typeof(CreatePhysicalPersonCommand).GetTypeInfo().Assembly);
+
+           })
+           .AddJsonOptions(opt =>
+           {
+               opt.JsonSerializerOptions.IgnoreNullValues = true;
+           });
         }
         public void ConfigureContainer(ContainerBuilder builder)
         {
@@ -64,7 +71,7 @@ namespace WebAPI.Presentation
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI.Presentation v1"));
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

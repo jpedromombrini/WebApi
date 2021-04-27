@@ -29,8 +29,11 @@ namespace WebAPI.Infrastructure.Data.Maps
                 .IsRequired()
                 .HasMaxLength(60)
                 .HasColumnType("varchar(60)");
-            
-                
+            builder
+                .Property(x => x.State)
+                .IsRequired()
+                .HasMaxLength(60)
+                .HasColumnType("varchar(60)");
         }        
     }
 }

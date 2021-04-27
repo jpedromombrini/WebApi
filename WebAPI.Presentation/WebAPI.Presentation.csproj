@@ -9,6 +9,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6"/>
     <PackageReference Include="Autofac" Version="6.2.0"/>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.5"/>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.0.4"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebAPI.Application.DTO\WebAPI.Application.DTO.csproj"/>
