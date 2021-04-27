@@ -7,13 +7,9 @@ namespace WebAPI.Domain.Core.Interfaces.Services
     public interface IBaseService<TEntity> where TEntity : class
     {
         Task AddAsync(TEntity obj);
-
-        Task<TEntity> GetByIdAsync(Guid id);
-
+        Task<TEntity> GetByIdAsync(Guid id);        
         Task<IEnumerable<TEntity>> GetAllAsync();
-
         Task Update(TEntity obj);
-
         Task Remove(TEntity obj);        
     }
 }

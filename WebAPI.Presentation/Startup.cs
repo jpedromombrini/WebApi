@@ -53,6 +53,13 @@ namespace WebAPI.Presentation
            {
                opt.JsonSerializerOptions.IgnoreNullValues = true;
            });
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                });
+            });
         }
         public void ConfigureContainer(ContainerBuilder builder)
         {
@@ -74,8 +81,9 @@ namespace WebAPI.Presentation
             //app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            
             app.UseAuthorization();
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {

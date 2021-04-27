@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using WebAPI.Domain.Core.Interfaces.Repositories;
 using WebAPI.Domain.Core.Interfaces.Services;
 using WebAPI.Domain.Models;
@@ -12,6 +13,10 @@ namespace WebAPI.Domain.Services.Services
         {
             _legalPersonRepository = legalPersonRepository;
         }
-        
+
+        public async Task<LegalPersonModel> GetByCnpjAsync(string cnpj)
+        {
+            return await _legalPersonRepository.GetByCnpjAsync(cnpj);
+        }
     }
 }

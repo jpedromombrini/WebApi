@@ -25,13 +25,23 @@ namespace WebAPI.Application.Tasks.Commands.Handlers
             {
                 var result = new ResultTask<PhysicalPersonResponse>();
                 var entity = _mapper.Map<PhysicalPersonModel>(command.Request);
-                await _physicalPersonService.AddAsync(entity);
+                var exists = _physicalPersonService.GetByCpfAsync(entity.Cpf);
+                if (exists == null)
+                {
+                    await _physicalPersonService.AddAsync(entity);
+                    result.Value = _mapper.Map<PhysicalPersonResponse>(entity);
+                }
+                else
+                {
+                    result.ValidOperation = false;
+                    result.Message = "Physical Person exist";
+                    result.Value = null;
+                }
 
-                result.Value = _mapper.Map<PhysicalPersonResponse>(entity);
 
                 return result;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }

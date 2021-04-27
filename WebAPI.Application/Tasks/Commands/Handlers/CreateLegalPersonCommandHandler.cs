@@ -24,14 +24,22 @@ namespace WebAPI.Application.Tasks.Commands.Handlers
             {
                 var result = new ResultTask<LegalPersonResponse>();
                 var entity = _mapper.Map<LegalPersonModel>(command.Request);
-
-                await _legalPersonService.AddAsync(entity);
-
-                result.Value = _mapper.Map<LegalPersonResponse>(entity);
+                var exists = await _legalPersonService.GetByCnpjAsync(entity.Cnpj);
+                if (exists == null)
+                {
+                    await _legalPersonService.AddAsync(entity);
+                    result.Value = _mapper.Map<LegalPersonResponse>(entity);
+                }
+                else
+                {
+                    result.ValidOperation = false;
+                    result.Message = "Legal Persons exists";
+                    result.Value = null;
+                }
 
                 return result;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
