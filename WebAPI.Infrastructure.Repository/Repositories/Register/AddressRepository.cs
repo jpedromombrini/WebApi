@@ -7,7 +7,7 @@ namespace WebAPI.Infrastructure.Repository.Repositories.Register
     public class AddressRepository : BaseRepository<AddressModel>, IAddressRepository
     {
         private readonly DataContext _context;
-        public AddressRepository(DataContext context)
+        public AddressRepository(DataContext context)        
             :base(context)
         {
             _context = context;
