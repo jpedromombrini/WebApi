@@ -19,7 +19,7 @@ namespace WebAPI.Infrastructure.Data.Maps
                 .Property(x => x.Cnpj)
                 .IsRequired()
                 .HasMaxLength(14)
-                .HasColumnType("varchar(14)");
+                .HasColumnType("varchar(14)");                
             builder
                 .Property(x => x.Subscription)
                 .IsRequired()

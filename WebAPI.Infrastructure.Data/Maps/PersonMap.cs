@@ -9,11 +9,12 @@ namespace WebAPI.Infrastructure.Data.Maps
         public void Configure(EntityTypeBuilder<PersonModel> builder)
         {
             builder
-                .ToTable("Persons");
+                .ToTable("Persons")
+                .HasAlternateKey(x => x.Email);
             builder
                 .HasKey("Id");
             builder
-                .Property(x => x.Email)
+                .Property(x => x.Email)                
                 .IsRequired()
                 .HasMaxLength(200)
                 .HasColumnType("varchar(200)");

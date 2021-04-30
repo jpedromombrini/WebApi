@@ -9,10 +9,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using WebAPI.Application.DTO.Requests.Validators;
-using WebAPI.Application.Tasks.Commands;
+using WebAPI.Application.DTO.Requests.Register.Validators;
+using WebAPI.Application.Tasks.Commands.Register;
 using WebAPI.Infrastructure.CrossCutting.IOC;
 using WebAPI.Infrastructure.Data;
+using WebAPI.Presentation.Middlewares;
 
 namespace WebAPI.Presentation
 {
@@ -38,6 +39,8 @@ namespace WebAPI.Presentation
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI.Presentation", Version = "v1" });
             });
+
+            services.AddGlobalExceptionHandlerMiddleware();
             var assembly = typeof(CreateLegalPersonCommand).GetTypeInfo().Assembly;
             services.AddMediatR(assembly);
             services.AddAutoMapper(assembly);

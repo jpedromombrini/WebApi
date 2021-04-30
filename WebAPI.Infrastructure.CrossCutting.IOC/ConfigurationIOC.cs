@@ -1,8 +1,8 @@
 using Autofac;
-using WebAPI.Domain.Core.Interfaces.Repositories;
-using WebAPI.Domain.Core.Interfaces.Services;
-using WebAPI.Domain.Services.Services;
-using WebAPI.Infrastructure.Repository.Repositories;
+using WebAPI.Domain.Core.Interfaces.Repositories.Register;
+using WebAPI.Domain.Core.Interfaces.Services.Register;
+using WebAPI.Domain.Services.Services.Register;
+using WebAPI.Infrastructure.Repository.Repositories.Register;
 
 namespace WebAPI.Infrastructure.CrossCutting.IOC
 {
