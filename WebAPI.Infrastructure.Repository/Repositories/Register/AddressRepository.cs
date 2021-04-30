@@ -1,3 +1,6 @@
+using System;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using WebAPI.Domain.Core.Interfaces.Repositories.Register;
 using WebAPI.Domain.Models;
 using WebAPI.Infrastructure.Data;
@@ -11,6 +14,11 @@ namespace WebAPI.Infrastructure.Repository.Repositories.Register
             :base(context)
         {
             _context = context;
+        }
+
+        public async Task<AddressModel> GetByPersonId(Guid PersonId)
+        {
+           return await _context.Addresses.FirstOrDefaultAsync(x => x.PersonId == PersonId);
         }
     }
 }

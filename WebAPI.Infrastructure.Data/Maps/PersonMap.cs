@@ -9,8 +9,7 @@ namespace WebAPI.Infrastructure.Data.Maps
         public void Configure(EntityTypeBuilder<PersonModel> builder)
         {
             builder
-                .ToTable("Persons")
-                .HasAlternateKey(x => x.Email);
+                .ToTable("Persons");                
             builder
                 .HasKey("Id");
             builder

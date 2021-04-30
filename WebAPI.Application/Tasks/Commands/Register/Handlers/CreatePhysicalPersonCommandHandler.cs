@@ -25,7 +25,7 @@ namespace WebAPI.Application.Tasks.Commands.Register.Handlers
             {
                 var result = new ResultTask<PhysicalPersonResponse>();
                 var entity = _mapper.Map<PhysicalPersonModel>(command.Request);
-                var exists = _physicalPersonService.GetByCpfAsync(entity.Cpf);
+                var exists = await _physicalPersonService.GetByCpfAsync(entity.Cpf);
                 if (exists == null)
                 {
                     await _physicalPersonService.AddAsync(entity);

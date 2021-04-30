@@ -1,3 +1,5 @@
+using System;
+using System.Threading.Tasks;
 using WebAPI.Domain.Core.Interfaces.Repositories.Register;
 using WebAPI.Domain.Core.Interfaces.Services.Register;
 using WebAPI.Domain.Models;
@@ -11,6 +13,11 @@ namespace WebAPI.Domain.Services.Services.Register
             :base(addressRepository)
         {
             _addressRepository = addressRepository;
+        }
+
+        public async Task<AddressModel> GetByPersonId(Guid PersonId)
+        {
+            return await _addressRepository.GetByPersonId(PersonId);
         }
     }
 }

@@ -86,6 +86,7 @@ namespace WebAPI.Presentation
             app.UseRouting();
             
             app.UseAuthorization();
+            app.UseGlobalExceptionHandlerMiddleware();
             app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
