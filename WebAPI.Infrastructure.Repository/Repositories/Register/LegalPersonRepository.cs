@@ -3,6 +3,8 @@ using WebAPI.Domain.Core.Interfaces.Repositories.Register;
 using WebAPI.Domain.Models;
 using WebAPI.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace WebAPI.Infrastructure.Repository.Repositories.Register
 {
@@ -17,6 +19,15 @@ namespace WebAPI.Infrastructure.Repository.Repositories.Register
         public async Task<LegalPersonModel> GetByCnpjAsync(string cnpj)
         {
             return await _context.LegalPersons.FirstOrDefaultAsync(x => x.Cnpj == cnpj);
+        }
+
+        public async Task<IEnumerable<LegalPersonModel>> GetByCompanyNameAsync(string companyName)
+        {
+            return await _context.LegalPersons
+                    .Where(x => x.CompanyName
+                    .Contains(companyName))
+                    .Include(a => a.Address)
+                    .ToListAsync();
         }
     }
 }

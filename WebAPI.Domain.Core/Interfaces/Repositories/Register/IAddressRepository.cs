@@ -6,6 +6,6 @@ namespace WebAPI.Domain.Core.Interfaces.Repositories.Register
 {
     public interface IAddressRepository : IBaseRepository<AddressModel> 
     {
-        Task<AddressModel> GetByPersonId(Guid PersonId);
+        Task<AddressModel> GetByPersonId(Guid personId);
     }
 }

@@ -6,6 +6,7 @@ namespace WebAPI.Domain.Core.Interfaces.Repositories.Register
 {
     public interface ILegalPersonRepository : IBaseRepository<LegalPersonModel> 
     {
-        Task<LegalPersonModel> GetByCnpjAsync(string cnpj);        
+        Task<LegalPersonModel> GetByCnpjAsync(string cnpj);   
+        Task<IEnumerable<LegalPersonModel>> GetByCompanyNameAsync(string companyName);     
     }
 }

@@ -6,7 +6,8 @@ namespace WebAPI.Domain.Core.Interfaces.Services.Register
 {
     public interface ILegalPersonService : IBaseService<LegalPersonModel> 
     {
-        Task<LegalPersonModel> GetByCnpjAsync(string cnpj);        
+        Task<LegalPersonModel> GetByCnpjAsync(string cnpj);   
+        Task<IEnumerable<LegalPersonModel>> GetByCompanyNameAsync(string companyName);          
 
     }
 }

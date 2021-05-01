@@ -2,8 +2,10 @@ using System;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using WebAPI.Application.DTO.Filters.Register;
 using WebAPI.Application.DTO.Requests.Register;
 using WebAPI.Application.Tasks.Commands.Register;
+using WebAPI.Application.Tasks.Queries.Register;
 
 namespace WebAPI.Presentation.Controllers.Register
 {
@@ -33,6 +35,12 @@ namespace WebAPI.Presentation.Controllers.Register
         public async Task<IActionResult> UpdateAsync([FromBody]UpdatePhysicalPersonRequest request)
         {
             var result = await _mediator.Send(new UpdatePhysicalPersonCommand(request));
+            return Ok(result);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetByParamsasync([FromQuery] GetPhysicalPersonsByParamsFilter filter)
+        {
+            var result = await _mediator.Send(new GetPhysicalPersonsByParamsQuery(filter));
             return Ok(result);
         }
     }

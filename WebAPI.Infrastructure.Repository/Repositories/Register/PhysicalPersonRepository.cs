@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Domain.Core.Interfaces.Repositories.Register;
@@ -18,6 +20,15 @@ namespace WebAPI.Infrastructure.Repository.Repositories.Register
         public async Task<PhysicalPersonModel> GetByCpfAsync(string cpf)
         {
             return await _context.PhysicalPersons.FirstOrDefaultAsync(x => x.Cpf == cpf);
+        }
+
+        public async Task<IEnumerable<PhysicalPersonModel>> GetByNameAsync(string name)
+        {
+             return await _context.PhysicalPersons
+                    .Where(x => x.Name
+                    .Contains(name))
+                    .Include(a => a.Address)
+                    .ToListAsync();
         }
     }
 }
