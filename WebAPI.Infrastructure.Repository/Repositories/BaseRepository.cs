@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using WebAPI.Domain.Core.Interfaces.Repositories.Register;
+using WebAPI.Domain.Core.Interfaces.Repositories;
 using WebAPI.Infrastructure.Data;
 
-namespace WebAPI.Infrastructure.Repository.Repositories.Register
+namespace WebAPI.Infrastructure.Repository.Repositories
 {
     public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {

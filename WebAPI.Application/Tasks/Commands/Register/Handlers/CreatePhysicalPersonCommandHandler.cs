@@ -5,7 +5,7 @@ using AutoMapper;
 using MediatR;
 using WebAPI.Application.DTO.Responses.Register;
 using WebAPI.Domain.Core.Interfaces.Services.Register;
-using WebAPI.Domain.Models;
+using WebAPI.Domain.Models.Register;
 
 namespace WebAPI.Application.Tasks.Commands.Register.Handlers
 {

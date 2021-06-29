@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace WebAPI.Domain.Core.Interfaces.Repositories.Register
+namespace WebAPI.Domain.Core.Interfaces.Repositories
 {
     public interface IBaseRepository<TEntity> where TEntity : class
     {

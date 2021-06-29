@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WebAPI.Domain.Core.Interfaces.Repositories.Register;
-using WebAPI.Domain.Core.Interfaces.Services.Register;
+using WebAPI.Domain.Core.Interfaces.Repositories;
+using WebAPI.Domain.Core.Interfaces.Services;
 
-namespace WebAPI.Domain.Services.Services.Register
+namespace WebAPI.Domain.Services.Services
 {
     public abstract class BaseService<TEntity> :  IBaseService<TEntity> where TEntity : class
     {

@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Domain.Core.Interfaces.Repositories.Register;
-using WebAPI.Domain.Models;
+using WebAPI.Domain.Models.Register;
 using WebAPI.Infrastructure.Data;
 
 namespace WebAPI.Infrastructure.Repository.Repositories.Register

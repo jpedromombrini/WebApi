@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebAPI.Domain.Core.Interfaces.Repositories.Register;
 using WebAPI.Domain.Core.Interfaces.Services.Register;
-using WebAPI.Domain.Models;
+using WebAPI.Domain.Models.Register;
 
 namespace WebAPI.Domain.Services.Services.Register
 {

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace WebAPI.Domain.Core.Interfaces.Services.Register
+namespace WebAPI.Domain.Core.Interfaces.Services
 {
     public interface IBaseService<TEntity> where TEntity : class
     {

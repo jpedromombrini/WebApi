@@ -1,4 +1,4 @@
-namespace WebAPI.Domain.Models
+namespace WebAPI.Domain.Models.Register
 {
     public class PhysicalPersonModel : PersonModel
     {

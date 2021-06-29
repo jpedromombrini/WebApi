@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using WebAPI.Domain.Models;
+using WebAPI.Domain.Models.Register;
 
-namespace WebAPI.Infrastructure.Data.Maps
+namespace WebAPI.Infrastructure.Data.Maps.Register
 {
     public class PersonMap : IEntityTypeConfiguration<PersonModel>
     {

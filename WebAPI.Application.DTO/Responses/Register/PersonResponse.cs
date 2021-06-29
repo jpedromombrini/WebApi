@@ -5,6 +5,7 @@ namespace WebAPI.Application.DTO.Responses.Register
 {
     public abstract class PersonResponse
     {
+        public Guid Id { get; set; }
         public string Email { get; set; }
         public DateTime InclusionDate { get; set; }  
         public string Phone { get; set; }

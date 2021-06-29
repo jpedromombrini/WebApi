@@ -1,7 +1,7 @@
 using System;
 using WebAPI.Domain.Enums;
 
-namespace WebAPI.Domain.Models
+namespace WebAPI.Domain.Models.Register
 {
     public abstract class PersonModel : BaseModel
     {

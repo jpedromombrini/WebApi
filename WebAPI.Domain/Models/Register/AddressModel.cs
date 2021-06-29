@@ -1,6 +1,6 @@
 using System;
 
-namespace WebAPI.Domain.Models
+namespace WebAPI.Domain.Models.Register
 {
     public class AddressModel : BaseModel
     {
